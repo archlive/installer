@@ -7,14 +7,14 @@ matrix:
       compiler: gcc
 
 before_install:
-- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo add-apt-repository ppa:beineri/opt-qt-5.10.1-trusty -y ; fi
-- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get update -qq                                     ; fi
+- sudo add-apt-repository ppa:beineri/opt-qt-5.10.1-trusty -y
+- sudo apt-get update -qq
 
 install:
-- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get -y install libgl1-mesa-dev qt510base ; fi
-- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then source /opt/qt*/bin/qt*-env.sh                                    ; fi
+- sudo apt-get -y install libgl1-mesa-dev qt510base ; fi
+- source /opt/qt*/bin/qt*-env.sh
 
 script:
-- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then qmake ArchInstaller.pro -spec linux-g++ CONFIG+=release PREFIX=/usr ; fi
-- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then make -j$(nproc)                                                     ; fi
-- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then make                                                                ; fi
+- qmake ArchInstaller.pro -spec linux-g++ CONFIG+=release PREFIX=/usr
+- make -j$(nproc)
+- make
