@@ -1,0 +1,20 @@
+language: cpp
+
+matrix:
+  include:
+    - os: linux
+      dist: trusty
+      compiler: gcc
+
+before_install:
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo add-apt-repository ppa:beineri/opt-qt-5.10.1-trusty -y ; fi
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get update -qq                                     ; fi
+
+install:
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get -y install libgl1-mesa-dev qt510base ; fi
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then source /opt/qt*/bin/qt*-env.sh                                    ; fi
+
+script:
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then qmake ArchInstaller.pro -spec linux-g++ CONFIG+=release PREFIX=/usr ; fi
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then make -j$(nproc)                                                     ; fi
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then make                                                                ; fi
