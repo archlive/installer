@@ -1,4 +1,4 @@
-# Arch Linux Installer
+# Arch Linux Installer (Work In Progress)
 
 [![Travis Build Status](https://travis-ci.com/archlive/installer.svg?branch=master)](https://travis-ci.com/archlive/installer)
 
