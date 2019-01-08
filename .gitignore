@@ -1,0 +1,14 @@
+/build/
+/docs/
+*.autosave
+*.o
+*.so
+arch-install
+*.pro.*
+Makefile*
+moc_*
+qrc_*
+ui_*
+*~
+.qmake.stash
+icons.sh

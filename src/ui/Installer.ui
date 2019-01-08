@@ -1,0 +1,983 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Installer</class>
+ <widget class="QWizard" name="Installer">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>510</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Arch Installer</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../../resources/resources.qrc">
+    <normaloff>:/icons/arch.png</normaloff>:/icons/arch.png</iconset>
+  </property>
+  <property name="wizardStyle">
+   <enum>QWizard::ModernStyle</enum>
+  </property>
+  <property name="options">
+   <set>QWizard::NoBackButtonOnStartPage</set>
+  </property>
+  <widget class="QWizardPage" name="PageLocale">
+   <property name="title">
+    <string>Welcome</string>
+   </property>
+   <property name="subTitle">
+    <string>Please choose your locale language</string>
+   </property>
+   <widget class="QWidget" name="formLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>10</y>
+      <width>491</width>
+      <height>351</height>
+     </rect>
+    </property>
+    <layout class="QFormLayout" name="layLocale">
+     <item row="0" column="0">
+      <widget class="QLabel" name="lblCountry">
+       <property name="text">
+        <string>Country</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QListWidget" name="lstCountry"/>
+     </item>
+     <item row="1" column="1">
+      <widget class="QListWidget" name="lstLanguage">
+       <property name="resizeMode">
+        <enum>QListView::Adjust</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="lblLanguage">
+       <property name="text">
+        <string>Language</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="lblEncoding">
+       <property name="text">
+        <string>Encoding</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QComboBox" name="cbxEncoding">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QComboBox" name="cbxVariant">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="lblVariant">
+       <property name="text">
+        <string>Variant</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QWizardPage" name="PagePartition">
+   <property name="title">
+    <string>Partitioning</string>
+   </property>
+   <property name="subTitle">
+    <string>Please choose a partition method.&lt;br&gt;Automatic partitioning will completely erase the selected disk.</string>
+   </property>
+   <widget class="QWidget" name="verticalLayoutWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>10</y>
+      <width>491</width>
+      <height>351</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="layPartition">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetNoConstraint</enum>
+     </property>
+     <item>
+      <widget class="QRadioButton" name="rbnAuto">
+       <property name="text">
+        <string>Automatic</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="rbnManual">
+       <property name="text">
+        <string>Manual</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="vspPartition">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QWizardPage" name="PageDrive">
+   <property name="title">
+    <string>Install media</string>
+   </property>
+   <property name="subTitle">
+    <string>Select the drive you want to use for installation</string>
+   </property>
+   <widget class="QWidget" name="verticalLayoutWidget_3">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>10</y>
+      <width>491</width>
+      <height>351</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="layDrive">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetNoConstraint</enum>
+     </property>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QWizardPage" name="PageKbModel">
+   <property name="title">
+    <string>Keyboard Model</string>
+   </property>
+   <property name="subTitle">
+    <string>Select your keyboard model</string>
+   </property>
+   <widget class="QWidget" name="verticalLayoutWidget_4">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>10</y>
+      <width>491</width>
+      <height>351</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="layKbModel">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetNoConstraint</enum>
+     </property>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QWizardPage" name="PageKbLayout">
+   <property name="title">
+    <string>Keyboard Layout</string>
+   </property>
+   <property name="subTitle">
+    <string>Select your keyboard layout</string>
+   </property>
+   <widget class="QWidget" name="verticalLayoutWidget_5">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>10</y>
+      <width>491</width>
+      <height>351</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="layKbLayout">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetNoConstraint</enum>
+     </property>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QWizardPage" name="PageKbVariant">
+   <property name="title">
+    <string>Keyboard Variant</string>
+   </property>
+   <property name="subTitle">
+    <string>Select your preferred variant</string>
+   </property>
+   <widget class="QWidget" name="verticalLayoutWidget_6">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>10</y>
+      <width>491</width>
+      <height>351</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="layKbVariant">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetNoConstraint</enum>
+     </property>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QWizardPage" name="PageZone">
+   <property name="title">
+    <string>Country Zone</string>
+   </property>
+   <property name="subTitle">
+    <string>Select your country / zone</string>
+   </property>
+   <widget class="QWidget" name="verticalLayoutWidget_7">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>10</y>
+      <width>491</width>
+      <height>351</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="layZone">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetNoConstraint</enum>
+     </property>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QWizardPage" name="PageSubZone">
+   <property name="title">
+    <string>Sub Zone</string>
+   </property>
+   <property name="subTitle">
+    <string>Select your sub-zone</string>
+   </property>
+   <widget class="QWidget" name="verticalLayoutWidget_8">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>10</y>
+      <width>491</width>
+      <height>351</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="laySubZone">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetNoConstraint</enum>
+     </property>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QWizardPage" name="PageTime">
+   <property name="title">
+    <string>Time</string>
+   </property>
+   <property name="subTitle">
+    <string>Choose between UTC or Local Time.&lt;br&gt;UTC is recommended unless you are dual booting with Windows.</string>
+   </property>
+   <widget class="QWidget" name="verticalLayoutWidget_9">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>10</y>
+      <width>491</width>
+      <height>351</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="layTime">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetNoConstraint</enum>
+     </property>
+     <item>
+      <widget class="QRadioButton" name="rbnUtc">
+       <property name="text">
+        <string>utc</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="rbnLocaltime">
+       <property name="text">
+        <string>localtime</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="vspTime">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QWizardPage" name="PageAccount">
+   <property name="title">
+    <string>Login Details</string>
+   </property>
+   <property name="subTitle">
+    <string>Enter hostname, username and passwords for the system</string>
+   </property>
+   <widget class="QWidget" name="gridLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>10</y>
+      <width>491</width>
+      <height>351</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="layAccount">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetNoConstraint</enum>
+     </property>
+     <item row="3" column="1">
+      <widget class="QLabel" name="lblUserPwConfirm">
+       <property name="text">
+        <string>Confirm user password:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLabel" name="lblUsername">
+       <property name="text">
+        <string>Username:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QLineEdit" name="txtUsername"/>
+     </item>
+     <item row="0" column="2">
+      <widget class="QLineEdit" name="txtHostname"/>
+     </item>
+     <item row="3" column="2">
+      <widget class="QLineEdit" name="txtUserPwConfirm">
+       <property name="echoMode">
+        <enum>QLineEdit::Password</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="2">
+      <widget class="QLineEdit" name="txtRootPwConfirm">
+       <property name="echoMode">
+        <enum>QLineEdit::PasswordEchoOnEdit</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="2">
+      <widget class="QLineEdit" name="txtRootPw">
+       <property name="echoMode">
+        <enum>QLineEdit::Password</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLabel" name="lblHostname">
+       <property name="text">
+        <string>Hostname:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="2">
+      <widget class="QRadioButton" name="rbnLoginAuto">
+       <property name="text">
+        <string>Log in automatically</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLabel" name="lblUserPw">
+       <property name="text">
+        <string>User password:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="2">
+      <widget class="QLineEdit" name="txtUserPw">
+       <property name="echoMode">
+        <enum>QLineEdit::Password</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QLabel" name="lblRootPw">
+       <property name="text">
+        <string>Root password:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1">
+      <widget class="QLabel" name="lblRootPwConfirm">
+       <property name="text">
+        <string>Confirm root password:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="2">
+      <widget class="QRadioButton" name="rbnLogin">
+       <property name="text">
+        <string>Require password to log in</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QWizardPage" name="PageShell">
+   <property name="title">
+    <string>Shell</string>
+   </property>
+   <property name="subTitle">
+    <string>Chose one</string>
+   </property>
+   <widget class="QWidget" name="verticalLayoutWidget_10">
+    <property name="geometry">
+     <rect>
+      <x>9</x>
+      <y>10</y>
+      <width>481</width>
+      <height>351</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="layShell">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetNoConstraint</enum>
+     </property>
+     <item>
+      <widget class="QRadioButton" name="rbnBash">
+       <property name="text">
+        <string>bash</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="rbnZsh">
+       <property name="text">
+        <string>zsh</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="rbnFish">
+       <property name="text">
+        <string>fish</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="vspShell">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QWizardPage" name="PageKernel">
+   <property name="title">
+    <string>Kernel</string>
+   </property>
+   <property name="subTitle">
+    <string>Choose a suitable kernel for your system</string>
+   </property>
+   <widget class="QWidget" name="verticalLayoutWidget_11">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>10</y>
+      <width>491</width>
+      <height>351</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="layKernel">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetNoConstraint</enum>
+     </property>
+     <item>
+      <widget class="QLabel" name="lblKernelDesc">
+       <property name="text">
+        <string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;p&gt;There are several kernels available for the system.&lt;br&gt;&lt;br&gt;
+The most common is the current linux kernel.&lt;br&gt;
+This kernel is the most up to date, providing the best hardware support.&lt;br&gt;
+However, there could be possible bugs in this kernel, despite testing.&lt;br&gt;&lt;br&gt;
+The linux-lts kernel provides a focus on stability.&lt;br&gt;
+It is based on an older kernel, so it may lack some newer features.&lt;br&gt;&lt;br&gt;
+The linux-hardened kernel is focused on security&lt;br&gt;
+It contains the Grsecurity Patchset and PaX for increased security.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="rbnLinux">
+       <property name="text">
+        <string>linux</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="rbnLts">
+       <property name="text">
+        <string>linux-lts</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="rbnHardened">
+       <property name="text">
+        <string>linux-hardened</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="vspKernel">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QWizardPage" name="PageVirtualBox">
+   <property name="title">
+    <string>VirtualBox</string>
+   </property>
+   <property name="subTitle">
+    <string>Install VirtualBox guest utilities</string>
+   </property>
+   <widget class="QWidget" name="verticalLayoutWidget_12">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>10</y>
+      <width>491</width>
+      <height>351</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetNoConstraint</enum>
+     </property>
+     <item>
+      <widget class="QLabel" name="lblVboxInfo">
+       <property name="text">
+        <string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;p&gt;The Installer has detected that system is running in VirtualBox.&lt;br&gt;
+Would you like to install VirtualBox guest utilities to the installed system?&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="rbnVboxYes">
+       <property name="text">
+        <string>Yes</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="rbnVboxNo">
+       <property name="text">
+        <string>No</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="verticalSpacer">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QWizardPage" name="PageUtils">
+   <property name="title">
+    <string>Utilities</string>
+   </property>
+   <property name="subTitle">
+    <string>Choose which support utilities to install</string>
+   </property>
+   <widget class="QWidget" name="verticalLayoutWidget_13">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>10</y>
+      <width>491</width>
+      <height>351</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="layUtils">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetNoConstraint</enum>
+     </property>
+     <item>
+      <widget class="QCheckBox" name="cbxCups">
+       <property name="text">
+        <string>Printer Support (cups)</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="cbxFirefox">
+       <property name="text">
+        <string>Firefox Browser</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="cbxLibreoffice">
+       <property name="text">
+        <string>LibreOffice</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="vspUtils">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QWizardPage" name="PageDisplayMgr">
+   <property name="title">
+    <string>Display Manager</string>
+   </property>
+   <property name="subTitle">
+    <string>Choose which one to use</string>
+   </property>
+   <widget class="QWidget" name="verticalLayoutWidget_14">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>10</y>
+      <width>491</width>
+      <height>351</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="layDisplayMgr">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetNoConstraint</enum>
+     </property>
+     <item>
+      <widget class="QRadioButton" name="rbnDefaultDm">
+       <property name="text">
+        <string>default</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="rbnGdm">
+       <property name="text">
+        <string>gdm</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="rbnLightdm">
+       <property name="text">
+        <string>lightdm</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="rbnLxdm">
+       <property name="text">
+        <string>lxdm</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="rbnSddm">
+       <property name="text">
+        <string>sddm</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="vspDisplayMgr">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QWizardPage" name="PageDesktopMgr">
+   <property name="title">
+    <string>Desktop Manager</string>
+   </property>
+   <property name="subTitle">
+    <string>Choose which one to install</string>
+   </property>
+   <widget class="QWidget" name="verticalLayoutWidget_15">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>10</y>
+      <width>491</width>
+      <height>351</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="layDesktopMgr">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetNoConstraint</enum>
+     </property>
+     <item>
+      <widget class="QRadioButton" name="rbnGnome">
+       <property name="text">
+        <string>gnome</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="rbnLxde">
+       <property name="text">
+        <string>lxde</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="rbnLxqt">
+       <property name="text">
+        <string>lxqt</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="rbnOpenbox">
+       <property name="text">
+        <string>openbox</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="rbnPlasma">
+       <property name="text">
+        <string>plasma</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="rbnXfce4">
+       <property name="text">
+        <string>xfce4</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="vspDM">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QWizardPage" name="PageBootloader">
+   <property name="title">
+    <string>Boot Loader</string>
+   </property>
+   <property name="subTitle">
+    <string>Choose whether to install the bootloader.</string>
+   </property>
+   <widget class="QWidget" name="verticalLayoutWidget_16">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>10</y>
+      <width>491</width>
+      <height>351</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="layBootloader">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetNoConstraint</enum>
+     </property>
+     <item>
+      <widget class="QRadioButton" name="rbnBLYes">
+       <property name="text">
+        <string>Yes</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="rbnBLNo">
+       <property name="text">
+        <string>No</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="vspBootloader">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>rbnAuto</tabstop>
+  <tabstop>rbnManual</tabstop>
+  <tabstop>rbnUtc</tabstop>
+  <tabstop>rbnLocaltime</tabstop>
+  <tabstop>txtHostname</tabstop>
+  <tabstop>txtUsername</tabstop>
+  <tabstop>txtUserPw</tabstop>
+  <tabstop>txtUserPwConfirm</tabstop>
+  <tabstop>txtRootPw</tabstop>
+  <tabstop>txtRootPwConfirm</tabstop>
+  <tabstop>rbnLogin</tabstop>
+  <tabstop>rbnLoginAuto</tabstop>
+  <tabstop>rbnBash</tabstop>
+  <tabstop>rbnZsh</tabstop>
+  <tabstop>rbnFish</tabstop>
+  <tabstop>rbnLinux</tabstop>
+  <tabstop>rbnLts</tabstop>
+  <tabstop>rbnHardened</tabstop>
+  <tabstop>rbnVboxYes</tabstop>
+  <tabstop>rbnVboxNo</tabstop>
+  <tabstop>cbxCups</tabstop>
+  <tabstop>cbxFirefox</tabstop>
+  <tabstop>cbxLibreoffice</tabstop>
+  <tabstop>rbnDefaultDm</tabstop>
+  <tabstop>rbnGdm</tabstop>
+  <tabstop>rbnLightdm</tabstop>
+  <tabstop>rbnLxdm</tabstop>
+  <tabstop>rbnSddm</tabstop>
+  <tabstop>rbnGnome</tabstop>
+  <tabstop>rbnLxde</tabstop>
+  <tabstop>rbnLxqt</tabstop>
+  <tabstop>rbnOpenbox</tabstop>
+  <tabstop>rbnPlasma</tabstop>
+  <tabstop>rbnXfce4</tabstop>
+  <tabstop>rbnBLYes</tabstop>
+  <tabstop>rbnBLNo</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../../resources/resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>
