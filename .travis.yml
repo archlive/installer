@@ -14,4 +14,3 @@ install:
 script:
 - qmake ArchInstaller.pro -spec linux-g++ CONFIG+=release PREFIX=/usr
 - make -j$(nproc)
-- make
