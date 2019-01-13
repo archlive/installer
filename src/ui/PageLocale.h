@@ -18,14 +18,16 @@ class PageLocale : public QWizardPage
 public:
     explicit PageLocale(QWidget *parent = nullptr);
     ~PageLocale();
-
-    QString locale() const;
+/**
+    Returns the current language tag for the choosen locale.
+*/
+    QString languageTag() const;
 
 private:
-    void initLanguages();
-    void listLocaleNames();
-    void updateLocaleName();
-    void makeIconScript(); // Script to create the flag icons directory
+    bool isComplete() const;
+
+    void loadLanguagesFromDB();
+    void updateCurrentLanguageTag();
 
     void onLanguageChanged(const QString &);
     void onCountryChanged(int);
@@ -37,17 +39,15 @@ private:
     QLabel      *lblEncoding;
     QLabel      *lblLanguage;
     QLabel      *lblLocale;
-    QLabel      *lblLocaleTxt;
+    QLabel      *lblLanguageTag;
     QLabel      *lblVariant;
     QComboBox   *cbxCountry;
     QComboBox   *cbxEncoding;
     QComboBox   *cbxVariant;
     QListWidget *lstLanguage;
 
-    QMap<QString, QString> localeNames; // /etc/locale.gen <locale> and <charset>s
-    Locale::DataBase db;
-
-    QString languageCode, countryCode, encoding, variant;
+    Locale::DataBase    db;
+    Locale::LanguagePtr currentLanguage;
 };
 
 #endif // PAGELOCALE_H

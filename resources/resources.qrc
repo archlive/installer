@@ -151,5 +151,6 @@
         <file>icons/flags/ZW.png</file>
         <file>iso-639-3_20181015.db</file>
         <file>iso-3166-1_201212.db</file>
+        <file>icons/flags/eo.png</file>
     </qresource>
 </RCC>
