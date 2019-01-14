@@ -29,6 +29,7 @@ QWizardPage(parent)
     setTitle(tr("Time"));
     setSubTitle(tr("Choose between UTC or Local Time.<br>"
                    "UTC is recommended unless you are dual booting with Windows."));
+    setPixmap(QWizard::LogoPixmap, QIcon(":/icons/clock.png").pixmap(48, 48));
 }
 PageTime::~PageTime()
 {

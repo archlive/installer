@@ -152,5 +152,17 @@
         <file>iso-639-3_20181015.db</file>
         <file>iso-3166-1_201212.db</file>
         <file>icons/flags/eo.png</file>
+        <file>icons/locale.png</file>
+        <file>icons/clock.png</file>
+        <file>icons/applications-utilities.png</file>
+        <file>icons/bootloader.png</file>
+        <file>icons/drive-harddisk.png</file>
+        <file>icons/input-keyboard.png</file>
+        <file>icons/linux.png</file>
+        <file>icons/preferences-system-login.png</file>
+        <file>icons/system-users.png</file>
+        <file>icons/user-desktop.png</file>
+        <file>icons/utilities-terminal.png</file>
+        <file>icons/virtualbox.png</file>
     </qresource>
 </RCC>

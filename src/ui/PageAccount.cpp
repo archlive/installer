@@ -61,6 +61,7 @@ rbnLogin(new QRadioButton(this))
     setLayout(layAccount);
     setTitle(tr("Login Details"));
     setSubTitle(tr("Enter hostname, username and passwords for the system"));
+    setPixmap(QWizard::LogoPixmap, QIcon(":/icons/system-users.png").pixmap(48, 48));
 }
 PageAccount::~PageAccount()
 {

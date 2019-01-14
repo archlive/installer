@@ -1,5 +1,6 @@
 #include "PageKbLayout.h"
 
+#include <QIcon>
 #include <QVBoxLayout>
 
 PageKbLayout::PageKbLayout(QWidget *parent)
@@ -13,6 +14,7 @@ QWizardPage(parent)
 
     setTitle(tr("Keyboard Layout"));
     setSubTitle(tr("Select your keyboard layout"));
+    setPixmap(QWizard::LogoPixmap, QIcon(":/icons/input-keyboard.png").pixmap(48, 48));
 }
 PageKbLayout::~PageKbLayout()
 {

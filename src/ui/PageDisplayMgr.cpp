@@ -35,6 +35,7 @@ vspDisplayMgr(new QSpacerItem(0, 0, QSizePolicy::Minimum, QSizePolicy::Expanding
     setLayout(layDisplayMgr);
     setTitle(tr("Display Manager"));
     setSubTitle(tr("Choose which one to use"));
+    setPixmap(QWizard::LogoPixmap, QIcon(":/icons/preferences-system-login.png").pixmap(48, 48));
 }
 PageDisplayMgr::~PageDisplayMgr()
 {

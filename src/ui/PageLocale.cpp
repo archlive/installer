@@ -51,6 +51,7 @@ currentLanguage(nullptr)
     setLayout(layLocale);
     setTitle(tr("Welcome"));
     setSubTitle(tr("Please choose your locale language"));
+    setPixmap(QWizard::LogoPixmap, QIcon(":/icons/locale.png").pixmap(48, 48));
 
     loadLanguagesFromDB();
 //  db.makeIconScript();

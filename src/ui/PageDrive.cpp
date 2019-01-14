@@ -1,5 +1,6 @@
 #include "PageDrive.h"
 
+#include <QIcon>
 #include <QVBoxLayout>
 
 PageDrive::PageDrive(QWidget *parent)
@@ -13,6 +14,7 @@ QWizardPage(parent)
 
     setTitle(tr("Install media"));
     setSubTitle(tr("Select the drive you want to use for installation"));
+    setPixmap(QWizard::LogoPixmap, QIcon::fromTheme(":/icons/drive-harddisk").pixmap(48, 48));
 }
 PageDrive::~PageDrive()
 {

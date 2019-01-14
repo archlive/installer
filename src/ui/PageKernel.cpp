@@ -42,6 +42,7 @@ vspKernel(new QSpacerItem(0, 0, QSizePolicy::Minimum, QSizePolicy::Expanding))
     setLayout(layKernel);
     setTitle(tr("Kernel"));
     setSubTitle(tr("Choose a suitable kernel for your system"));
+    setPixmap(QWizard::LogoPixmap, QIcon(":/icons/linux.png").pixmap(48, 48));
 }
 PageKernel::~PageKernel()
 {

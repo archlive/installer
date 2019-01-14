@@ -39,6 +39,7 @@ vspDesktopMgr(new QSpacerItem(0, 0, QSizePolicy::Minimum, QSizePolicy::Expanding
     setLayout(layDesktopMgr);
     setTitle(tr("Desktop Manager"));
     setSubTitle(tr("Choose which one to install"));
+    setPixmap(QWizard::LogoPixmap, QIcon(":/icons/user-desktop.png").pixmap(48, 48));
 }
 PageDesktopMgr::~PageDesktopMgr()
 {

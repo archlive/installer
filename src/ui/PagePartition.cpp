@@ -28,6 +28,7 @@ vspPartition(new QSpacerItem(0, 0, QSizePolicy::Minimum, QSizePolicy::Expanding)
     setTitle(tr("Partitioning"));
     setSubTitle(tr("Please choose a partition method.<br>"
                    "Automatic partitioning will completely erase the selected disk."));
+    setPixmap(QWizard::LogoPixmap, QIcon(":/icons/drive-harddisk.png").pixmap(48, 48));
 }
 PagePartition::~PagePartition()
 {

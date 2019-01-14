@@ -26,6 +26,7 @@ vspBootloader(new QSpacerItem(0, 0, QSizePolicy::Minimum, QSizePolicy::Expanding
     setLayout(layBootloader);
     setTitle(tr("Boot Loader"));
     setSubTitle(tr("Choose whether to install the bootloader"));
+    setPixmap(QWizard::LogoPixmap, QIcon(":/icons/bootloader.png").pixmap(48, 48));
 }
 PageBootloader::~PageBootloader()
 {

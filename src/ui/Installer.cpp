@@ -27,7 +27,7 @@ QWizard(parent)
     setWizardStyle(QWizard::ModernStyle);
     setWindowIcon(QIcon(":/icons/arch.png"));
     setWindowTitle(tr("Arch Installer"));
-    resize(510, 480);
+    resize(600, 480);
 
     setPage(idLocale,     new PageLocale(this));
     setPage(idPartition,  new PagePartition(this));

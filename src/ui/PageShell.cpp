@@ -30,6 +30,7 @@ vspShell(new QSpacerItem(0, 0, QSizePolicy::Minimum, QSizePolicy::Expanding))
     setLayout(layShell);
     setTitle(tr("Shell"));
     setSubTitle(tr("Chose one"));
+    setPixmap(QWizard::LogoPixmap, QIcon(":/icons/utilities-terminal.png").pixmap(48, 48));
 }
 PageShell::~PageShell()
 {

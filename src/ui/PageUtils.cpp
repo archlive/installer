@@ -28,6 +28,7 @@ vspUtils(new QSpacerItem(0, 0, QSizePolicy::Minimum, QSizePolicy::Expanding))
     setLayout(layUtils);
     setTitle(tr("Utilities"));
     setSubTitle(tr("Choose which support utilities to install"));
+    setPixmap(QWizard::LogoPixmap, QIcon(":/icons/applications-utilities.png").pixmap(48, 48));
 }
 PageUtils::~PageUtils()
 {

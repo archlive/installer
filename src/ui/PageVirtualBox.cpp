@@ -34,6 +34,7 @@ vspVbox(new QSpacerItem(0, 0, QSizePolicy::Minimum, QSizePolicy::Expanding))
     setLayout(layVirtualBox);
     setTitle(tr("VirtualBox"));
     setSubTitle(tr("Install VirtualBox guest utilities"));
+    setPixmap(QWizard::LogoPixmap, QIcon(":/icons/virtualbox.png").pixmap(48, 48));
 }
 PageVirtualBox::~PageVirtualBox()
 {

@@ -1,5 +1,6 @@
 #include "PageKbVariant.h"
 
+#include <QIcon>
 #include <QVBoxLayout>
 
 PageKbVariant::PageKbVariant(QWidget *parent)
@@ -13,6 +14,7 @@ QWizardPage(parent)
 
     setTitle(tr("Keyboard Variant"));
     setSubTitle(tr("Select your preferred keyboard variant"));
+    setPixmap(QWizard::LogoPixmap, QIcon(":/icons/input-keyboard.png").pixmap(48, 48));
 }
 PageKbVariant::~PageKbVariant()
 {

@@ -1,5 +1,6 @@
 #include "PageZone.h"
 
+#include <QIcon>
 #include <QVBoxLayout>
 
 PageZone::PageZone(QWidget *parent)
@@ -13,6 +14,7 @@ QWizardPage(parent)
 
     setTitle(tr("Country Zone"));
     setSubTitle(tr("Select your country / zone"));
+    setPixmap(QWizard::LogoPixmap, QIcon(":/icons/locale.png").pixmap(48, 48));
 }
 PageZone::~PageZone()
 {
